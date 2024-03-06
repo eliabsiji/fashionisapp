@@ -194,17 +194,6 @@ License: For each use you must have a valid license purchased only from above li
 
 
 
-
-                 
-                </div>
-                <div class="d-grid">
-                  <button class="btn btn-primary">Upgrade storage</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- row -->
-
         <div class="row">
           <div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
             <div class="card">
