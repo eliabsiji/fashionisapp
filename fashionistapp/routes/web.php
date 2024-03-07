@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ClientsController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\DashboardController;
 
 
 
@@ -16,6 +17,5 @@ use App\Http\Controllers\dashboardController;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+Route::get('/allclients',[ClientsController::class, 'index'])->name('allclients');
