@@ -14,7 +14,7 @@
           <ul class="nav">
             <li class="nav-item nav-category">Main</li>
             <li class="nav-item">
-              <a href="/dashboard" class="nav-link">
+              <a href="{{ route('dashboard') }}" class="nav-link">
                 <i class="link-icon" data-feather="box"></i>
                 <span class="link-title">Dashboard</span>
               </a>
@@ -50,7 +50,7 @@
                 <div class="collapse" id="client">
                   <ul class="nav sub-menu">
                     <li class="nav-item">
-                      <a href="pages/email/inbox.html" class="nav-link">All Clients</a>
+                      <a href="{{ route('allclients') }}" class="nav-link">All Clients</a>
                     </li>
 
                     </ul>
