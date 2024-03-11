@@ -3,45 +3,46 @@
 <div class="page-content">
 
 
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newclient" data-bs-whatever="@mdo">New Client</button>
-
-
-  <div class="modal fade" id="newclient" tabindex="-1" aria-labelledby="varyingModalLabel" aria-hidden="true">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    New Client
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="varyingModalLabel">Client Details</h5>
+          <h5 class="modal-title" id="exampleModalLabel">New Client</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="recipient-name" class="form-label">Full Name:</label>
-              <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="mb-3">
-              <label for="recipient-name" class="form-label">Phone Number:</label>
-              <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="mb-3">
-              <label for="recipient-name" class="form-label">Gender:</label>
-              <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="mb-3">
-              <label for="recipient-name" class="form-label">Address:</label>
-              <input type="text" class="form-control" id="recipient-name">
-            </div>
+            <form id="save_form" action="/saveclient" method="POST">
+                @csrf
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Full Name:</label>
+                  <input type="text" class="form-control" id="fullname" name="fullname">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Phone Number:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Gender:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Address:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
 
-          </form>
+              </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
+          <button type="button" class="btn btn-primary" onclick="form_submit()">Save changes</button>
         </div>
       </div>
     </div>
   </div>
-
 
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
@@ -247,4 +248,18 @@
     </div>
 
 </div>
+
+
+<script type="text/javascript">
+    function form_submit() {
+        var fn = document.getElementById("fullname").value;
+        if (fn == "") {
+            alert("Enter Client's full name");
+            return false;
+            }
+
+
+            document.getElementById("save_form").submit();
+     }
+    </script>
 @endsection

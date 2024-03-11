@@ -19,3 +19,4 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 Route::get('/allclients',[ClientsController::class, 'index'])->name('allclients');
+Route::post('/saveclient',[ClientsController::class, 'saveclient'])->name('saveclient');
