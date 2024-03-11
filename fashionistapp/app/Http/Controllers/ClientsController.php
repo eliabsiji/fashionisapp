@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\ClientsModel;
+use Illuminate\Http\Request;
 
 class ClientsController extends Controller
 {
 
     public function index(){
 
-        return view('client.allclients');
+        $allclients = User::leftjoin('clients','clients.user_id','=','users.id')
+                    ->get();
+        return view('client.allclients')->with('clients',$allclients);
 
     }
 
