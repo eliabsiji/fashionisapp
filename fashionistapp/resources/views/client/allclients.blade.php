@@ -3,6 +3,45 @@
 <div class="page-content">
 
 
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newclient" data-bs-whatever="@mdo">New Client</button>
+
+
+  <div class="modal fade" id="newclient" tabindex="-1" aria-labelledby="varyingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="varyingModalLabel">Client Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="form-label">Full Name:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="form-label">Phone Number:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="form-label">Gender:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="form-label">Address:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
