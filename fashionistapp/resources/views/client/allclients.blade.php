@@ -73,11 +73,11 @@
             <tr>
                 <td>{{ $count }}</td>
                 <td>{{ $client->name }}</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
+                <td>{{ $client->phonenumber }}</td>
+                <td>{{ $client->gender }}</td>
+                <td>{{ $client->address }}</td>
+                <td>Styles</td>
+                <td>{{ $client->datecreated }}</td>
            </tr>
            @php
                  $count = 0;
