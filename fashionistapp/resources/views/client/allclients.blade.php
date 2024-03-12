@@ -23,15 +23,15 @@
                 </div>
                 <div class="mb-3">
                   <label for="recipient-name" class="form-label">Phone Number:</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
+                  <input type="text" class="form-control" id="phonenumber"name="phonenumber">
+              </div>
                 <div class="mb-3">
                   <label for="recipient-name" class="form-label">Gender:</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                  <input type="text" class="form-control" id="gender" name="gender">
                 </div>
                 <div class="mb-3">
                   <label for="recipient-name" class="form-label">Address:</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                  <input type="text" class="form-control" id="address" name="address">
                 </div>
 
               </form>
@@ -80,7 +80,7 @@
                 <td>{{ $client->datecreated }}</td>
            </tr>
            @php
-                 $count = 0;
+                 $count++;
             @endphp
             @endforeach
 
@@ -99,10 +99,28 @@
 <script type="text/javascript">
     function form_submit() {
         var fn = document.getElementById("fullname").value;
+        var ph = document.getElementById("phonenumber").value;
+        var gr = document.getElementById("gender").value;
+        var ad = document.getElementById("address").value;
         if (fn == "") {
             alert("Enter Client's full name");
             return false;
             }
+        if (ph == "") {
+        alert("Enter Client's phonenumber");
+        return false;
+        }
+
+        if (gr == "") {
+        alert("Enter Client's gender name");
+        return false;
+        }
+
+        if (ad == "") {
+        alert("Enter Client's address name");
+        return false;
+        }
+
 
 
             document.getElementById("save_form").submit();

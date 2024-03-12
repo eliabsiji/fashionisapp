@@ -13,7 +13,8 @@ class ClientsController extends Controller
 
         $allclients = User::leftjoin('clients','clients.user_id','=','users.id')
                     ->get(['users.name as name','clients.phonenumber as phonenumber',
-                           'clients.gender as gender','clients.address as address','clients.created_at as datecreated']);
+                           'clients.gender as gender','clients.address as address',
+                           'clients.created_at as datecreated']);
         return view('client.allclients')->with('clients',$allclients);
 
     }
@@ -31,8 +32,12 @@ class ClientsController extends Controller
         ]);
         ClientsModel::create([
             'user_id'=> $user->id,
+            'phonenumber'=>$request->phonenumber,
+            'gender'=>$request->gender,
+            'address'=>$request->address,
         ]);
 
+        
 
 
 
