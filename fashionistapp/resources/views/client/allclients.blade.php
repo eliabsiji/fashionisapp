@@ -94,8 +94,6 @@
                  $count++;
             @endphp
             @endforeach
-
-
         </tbody>
       </table>
     </div>
