@@ -2,6 +2,51 @@
 @section('content')
 <div class="page-content">
 
+<<<<<<< Updated upstream
+=======
+    @if (\Session::has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congrats! </strong>{{ \Session::get('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
+        </div>
+    @endif
+    @if (\Session::has('danger'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>OOPS! </strong>{{ \Session::get('danger') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
+    </div>
+@endif
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    New Client
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Client</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="save_form" action="/saveclient" method="POST">
+             @csrf
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Full Name:</label>
+                  <input type="text" class="form-control" id="fullname" name="fullname">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Phone Number:</label>
+                  <input type="text" class="form-control" id="phonenumber" name="phonenumber">
+              </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Gender:</label>
+                  <input type="text" class="form-control" id="gender" name="gender">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Address:</label>
+                  <input type="text" class="form-control" id="address" name="address">
+                </div>
+>>>>>>> Stashed changes
 
 
     <div class="row">
