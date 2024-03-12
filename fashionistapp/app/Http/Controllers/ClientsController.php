@@ -24,8 +24,11 @@ class ClientsController extends Controller
   public function saveclient(Request $request)
   {
 
-
-        $user = User::create([
+    $chkphone = ClientsModel::where('phonenumber','=',$request->phonenumber)->exists();
+    if($chkphone){
+        return back() ->with('danger','Phone Number already registered');
+    }else{
+         $user = User::create([
             'name' => $request->fullname,
             'email' => 'test@email.com',
             'password' => bcrypt('password123'),
@@ -36,8 +39,11 @@ class ClientsController extends Controller
             'gender'=>$request->gender,
             'address'=>$request->address,
         ]);
+        return back() ->with('success','You have succefully Registered Client');
+    }
 
-        
+
+
 
 
 

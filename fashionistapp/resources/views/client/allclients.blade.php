@@ -2,7 +2,18 @@
 @section('content')
 <div class="page-content">
 
-
+    @if (\Session::has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congrats! </strong>{{ \Session::get('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
+        </div>
+    @endif
+    @if (\Session::has('danger'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>OOPS! </strong>{{ \Session::get('danger') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
+    </div>
+@endif
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     New Client
   </button>
@@ -23,7 +34,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="recipient-name" class="form-label">Phone Number:</label>
-                  <input type="text" class="form-control" id="phonenumber"name="phonenumber">
+                  <input type="text" class="form-control" id="phonenumber" name="phonenumber">
               </div>
                 <div class="mb-3">
                   <label for="recipient-name" class="form-label">Gender:</label>
@@ -58,7 +69,7 @@
             <th>Full Name</th>
             <th>Phone Number</th>
             <th>Gender</th>
-            <th>Address</th>
+            <th>More</th>
             <th>Measurement</th>
             <th>Date Registered</th>
           </tr>
@@ -75,7 +86,7 @@
                 <td>{{ $client->name }}</td>
                 <td>{{ $client->phonenumber }}</td>
                 <td>{{ $client->gender }}</td>
-                <td>{{ $client->address }}</td>
+                <td>more</td>
                 <td>Styles</td>
                 <td>{{ $client->datecreated }}</td>
            </tr>
